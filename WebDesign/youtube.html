@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>YouTube</title>
+</head>
+<body>
+    <style>
+        nav {
+            background-color: rgba(33,33,33);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: 0;
+            top: 0;
+            align-self: flex-start;
+            position: sticky;
+            padding: 0.45em;
+        }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            color: #aaa;
+            display: flex;
+
+        }
+        .burger {
+            padding-left: 1.5em;
+            cursor: pointer;
+        }
+        .logo {
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand {
+            padding-left: 1em;
+        }
+
+        .search {
+            display: flex;
+        }
+        .searchbar {
+            background-color: #191919;
+            border: 1px solid #333;
+            color: #aaa;
+            padding: 0.5em;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+        .search-btn {
+            background-color: #333;
+            border: none;
+            color: #777;
+            padding: 0 1.25em;
+        }
+
+        .search-btn i {
+            font-size: 16px;
+        }
+
+        .account i {
+            color: white;
+            padding: 0 0.5em;
+            cursor: pointer;
+        }
+
+
+        .content {
+            background-color: #191919;
+            min-height: 100vh;
+            width: 100%;
+        }
+        .sidebar {
+            background-color: rgba(33,33,33);
+            height: 100vh;
+            padding: 0.5em;
+            top: 0;
+            display: flex;
+            align-self: flex-start;
+            position: sticky;
+        }
+        .main-content {
+            display: flex;
+        }
+        .account {
+            display: flex;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.4em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar li {
+            margin-bottom: 3.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+            cursor: pointer;            
+        }
+
+
+        .sidebar li i {
+            padding-bottom: 0.25em;
+        }
+        .sidebar li:hover {
+            color: white;
+        }
+
+        section {
+            margin-top: 1.25em;
+            margin-left: 3.5em;
+        }
+        .section-title {
+            color: white;
+        }
+
+        .videos {
+            margin-top: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2em;
+        }
+        .video {
+            cursor: pointer;
+            width: 30%;
+            max-width: 200px;
+            height: fit-content;
+            margin-right: 3px;
+            margin-bottom: 1em;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 125px;
+            background-color: white;
+        }
+
+        .video-title {
+            margin-top: 0.45em;
+            margin-bottom: 0.45em;
+            font-size: 0.85em;
+            color: white;
+        }
+        .video-meta {
+            margin-top: 0.45em;
+            font-size: 0.65em;
+        }
+        .channel-name {
+            margin-bottom: 0.35em;
+        }
+        .white {
+            color: white;
+        }
+    </style>
+
+<div class="sidebar">
+    <ul>
+        <li><i class="material-icons white">menu</i></li>
+        <li><i class="material-icons">home</i>Home</li>
+        <li><i class="material-icons">local_fire_department</i>Trending</li>
+        <li><i class="material-icons">subscriptions</i>Subscriptions</li>
+        <li><i class="material-icons">video_library</i>Library</li>
+    </ul>
+</div>
+
+   
+<div class="content">
+   <nav>
+       <div class="logo">
+           <div class="brand">YouTube</div>
+        </div>
+       <div class="search">
+           <input class="searchbar" type="text" placeholder="search" />
+           <button class="search-btn"><i class="material-icons">search</i></button>
+       </div>
+       <div class="account">
+           <div><i class="material-icons">video_call</i></div>
+           <div><i class="material-icons">apps</i></div>
+           <div><i class="material-icons">notifications</i></div>
+           <div><i class="material-icons">account_circle</i></div>
+       </div>
+   </nav>
+   <div class="main-content">
+        
+            <section>
+               <div class="section-title">Today</div>
+                <div class="videos">
+                    <div class="video">
+                        <div class="thumbnail"></div>
+                        <div class="video-title">Amazing Video Title!</div>
+                        <div class="video-meta">
+                            <div class="channel-name">RISE Channel</div>
+                            <div class="video-data">4k views  6 minutes ago</div>
+                        </div>
+                    </div>
+
+                    <div class="video">
+                        <div class="thumbnail"></div>
+                        <div class="video-title">Amazing Video Title!</div>
+                        <div class="video-meta">
+                            <div class="channel-name">RISE Channel</div>
+                            <div class="video-data">4k views  6 minutes ago</div>
+                        </div>
+                    </div>
+
+                    <div class="video">
+                        <div class="thumbnail"></div>
+                        <div class="video-title">Amazing Video Title!</div>
+                        <div class="video-meta">
+                            <div class="channel-name">RISE Channel</div>
+                            <div class="video-data">4k views  6 minutes ago</div>
+                        </div>
+                    </div>
+                </div>
+           </section>
+       </div>
+   </div>
+   <script>
+       let video = document.querySelector('.video');
+       let videos = document.querySelector('.videos');
+       for (var i = 0; i < 10; i++) {
+           videos.append(video.cloneNode(true));
+       }
+       
+   </script>
+
+
+</body>
+</html>
